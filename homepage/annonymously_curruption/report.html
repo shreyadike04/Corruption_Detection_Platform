@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Corruption</title>
+    <link rel="stylesheet" href="report.css">
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script defer src="report.js"></script>
+</head>
+<body>
+    <div class="container">
+        <u style="color: brown;"><h1 class="title">Report Corruption</h1></u>
+        <form id="reportForm">
+            <label for="incidentType" style="font-size:140% ;">Incident Type:</label>
+            <select id="incidentType" required>
+                <option value="Bribery">Bribery</option>
+                <option value="Misuse of Funds">Misuse of Funds</option>
+                <option value="Nepotism">Nepotism</option>
+            </select>
+
+            <label for="description" style="font-size:140% ;">Description:</label>
+            <textarea id="description" placeholder="Describe the incident..." required></textarea>
+
+           <!-- File Upload Container -->
+<div class="file-upload-container">
+    <label for="proof"><b>Upload Proof (Images, <span style="font-weight: bold;">PDFs</span>, Videos):</b></label>
+    <input type="file" id="proof" accept="image/,video/,.pdf">
+</div>
+
+
+            <label for="location" style="font-size:140% ;">Location:</label>
+            <input type="text" id="location" placeholder="Enter Location" required>
+
+            <!-- Checkbox Container -->
+<div class="checkbox-container">
+    <input type="checkbox" id="anonymous" checked>
+    <label for="anonymous">Submit Anonymously</label>
+</div>
+
+
+            <div id="emailSection" class="hidden">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <div class="otpverify">
+                <button type="button" id="sendOtp">Send OTP</button>
+                <input type="text" id="otp" placeholder="Enter OTP">
+                <button class="btn" id="otp-btn" >Verify</button> 
+            </div>           
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Report</button>
+            <script src="report.js"></script>
+        </form>
+        
+        <div id="caseStatus" class="hidden">
+            <h2>Case Submitted!</h2>
+            <p>Your Case ID: <span id="caseID"></span></p>
+            <p>Status: <span id="caseProgress">Received</span></p>
+        </div>
+    </div>
+</body>
+</html>

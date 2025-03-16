@@ -1,0 +1,52 @@
+<!-- Top Corrupt States -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corruption Heatmap & Statistics</title>
+    <link rel="stylesheet" href="heatmap.css">
+    <script defer src="heatmap.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <section class="hero">
+        <h1>Corruption Heatmap & Analytics</h1>
+        <p>Track corruption trends and identify high-risk areas.</p>
+    </section>
+
+    <main>
+        <!-- Heatmap Section -->
+        <section id="map-container">
+            <h2>Corruption Heatmap</h2>
+            <div id="map">
+                <img src="assets\Heatmap.png" alt="corruption heatmap">
+            </div>
+            
+            <!-- Filters -->
+            <div id="filters">
+                <label for="filterType">Filter by Corruption Type:</label>
+                <select id="filterType">
+                    <option value="all">All</option>
+                    <option value="bribery">Bribery</option>
+                    <option value="misuse">Misuse of Funds</option>
+                    <option value="nepotism">Nepotism</option>
+                </select>
+            </div>
+
+            <!-- Top Corrupt States -->
+            <div id="top-corrupt-states">
+                <h3>Top 5 Most Corrupt States in India</h3>
+                <ul id="corruptStatesList"></ul>
+            </div>
+        </section>
+        
+        <!-- Data Analytics Section -->
+        <section id="dashboard">
+            <h2>Data Analytics</h2>
+            <canvas id="corruptionChart"></canvas>
+        </section>
+    </main>
+</body>
+</html>

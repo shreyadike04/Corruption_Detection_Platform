@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hero Section */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #ff5733, #ffbd69);
+    color: white;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header button {
+    background-color: yellow;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Accordion */
+.accordion-item {
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.accordion-btn, .faq-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.accordion-content, .faq-content {
+    display: none;
+    padding: 10px;
+    background: #e9ecef;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+/* Hide the Google Translate top banner */
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+/* Prevent body shifting due to hidden banner */
+body {
+    top: 0px !important;
+    position: static !important;
+}
+
+/* Hide the top bar and unnecessary elements */
+.goog-te-banner-frame, .goog-te-balloon-frame {
+    display: none !important;
+}
+
+/* Hide the Google Translate toolbar */
+.goog-te-gadget-simple img {
+    display: none !important;
+}
+
+/* Prevent layout shifting */
+body {
+    top: 0px !important;
+}

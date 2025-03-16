@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Ratings & Transparency</title>
+    <link rel="stylesheet" href="rating.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+            <h1>Business & Government Office Ratings</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+        <p>Track office ratings and report corruption.</p>
+    </header>
+
+    <!-- Search & Filter -->
+    <section class="search-container">
+        <input type="text" id="search" placeholder="Search office..." onkeyup="searchOffices()">
+        <select id="filter-category" onchange="filterOffices()">
+            <option value="">All Categories</option>
+            <option value="Government">Government</option>
+            <option value="Business">Business</option>
+        </select>
+        <button class="btn" onclick="showLeaderboard()">Leaderboard</button>
+    </section>
+
+    <!-- Office List -->
+    <section class="office-list">
+        <h2>Office Ratings</h2>
+        <div id="office-list"></div>
+    </section>
+
+    <!-- Add Review -->
+    <!-- Add Review Section -->
+<section class="add-review">
+    <h2>Add a Review</h2>
+    <select id="review-office">
+        <option value="">Select Office</option>
+    </select>
+    
+    <textarea id="review-comment" placeholder="Your Review"></textarea>
+    <div class="rating">
+        <span onclick="setRating(1)">⭐</span>
+        <span onclick="setRating(2)">⭐</span>
+        <span onclick="setRating(3)">⭐</span>
+        <span onclick="setRating(4)">⭐</span>
+        <span onclick="setRating(5)">⭐</span>
+    </div>
+    <button class="btn" onclick="addReview()">Submit Review</button>
+    <p id="review-message"></p>
+</section>
+
+
+    <!-- Leaderboard -->
+    <section class="leaderboard">
+        <h2>Top 10 Ethical Offices</h2>
+        <div id="top-list"></div>
+        <h2>Worst 10 Offices</h2>
+        <div id="worst-list"></div>
+    </section>
+
+    <script src="rating.js"></script>
+</body>
+</html>

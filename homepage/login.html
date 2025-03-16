@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e8fa4b18bd.js" crossorigin="anonymous"></script>
+    <title>Responsive Online Voting System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f8c69d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .form-box {
+            width: 90%;
+            max-width: 450px;
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .form-box h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #fd7526;
+            position: relative;
+        }
+        .form-box h1::after {
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 3px;
+            background: #f88b32;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .input-field {
+            background: #eaeaea;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        input {
+            width: 100%;
+            background: transparent;
+            border: 0;
+            outline: 0;
+            padding: 18px 15px;
+        }
+        .input-field i {
+            margin-left: 15px;
+            color: #3f3f3f;
+        }
+        .btn-field {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .btn-field button {
+            flex-basis: 48%;
+            background: #f88b32;
+            color: #fff;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-field button.disable {
+            background: #e7e7e7;
+            color: #fc7303;
+        }
+        .btn-field button:hover {
+            background: #e57028;
+        }
+        .language-select {
+            margin-bottom: 20px;
+            text-align: right;
+            width: 100%;
+            max-width: 430px;
+        }
+        .language-select select {
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 16px;
+            background-color: #fd7526;
+            color: white;
+            border: none;
+            cursor:pointer;
+            transition: background-color 0.3s ease;
+        }
+        .language-select select:hover {
+            background-color: #e57028;
+        }
+        @media (max-width: 500px) {
+            .form-box {
+                padding: 30px;
+            }
+            .btn-field button {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="language-select">
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="mr">Marathi</option>
+        </select>
+    </div>
+
+    <div class="form-box">
+        <h1 id="title">Sign up</h1>
+        <form id="authForm">
+            <div class="input-group">
+                <div class="input-field" id="namefield">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                </div>  
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+            </div>
+            <div class="btn-field">
+                <button type="button" id="signupBtn">Sign up</button>
+                <button type="button" id="signinBtn" class="disable">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+const translations = {
+            en: {
+                title: "Sign up",
+                namePlaceholder: "Name",
+                emailPlaceholder: "Email",
+                passwordPlaceholder: "Password",
+                signupButton: "Sign up",
+                signinButton: "Sign in",
+                signinError:"Please enter both Email and Password for Sign In.",
+                signinAlert:"Sign in Successful",
+                signupError:"Please fill out all fields for Sign Up.",
+                signupAlert:"Sign Up successful!"
+            },
+            hi: {
+                title: "साइन अप करें",
+                namePlaceholder: "नाम",
+                emailPlaceholder: "ईमेल",
+                passwordPlaceholder: "पासवर्ड",
+                signupButton: "साइन अप करें",
+                signinButton: "साइन इन करें",
+                signinError:"कृपया साइन इन के लिए ईमेल और पासवर्ड दोनों दर्ज करें।",
+                signinAlert:"साइन इन सफल!",
+                signupError:"कृपया साइन अप के लिए ईमेल और पासवर्ड दोनों दर्ज करें।",
+                signupAlert:"साइन अप सफल!"
+            },
+            mr: {
+                title: "साइन अप करा",
+                namePlaceholder: "नाव",
+                emailPlaceholder: "ईमेल",
+                passwordPlaceholder: "पासवर्ड",
+                signupButton: "साइन अप करा",
+                signinButton: "साइन इन करा",
+                signinError:"साइन इन साठी कृपया ईमेल आणि पासवर्ड दोन्ही भरावा.",
+                signinAlert:"साइन इन यशस्वी!",
+                signupError:"साइन अप साठी कृपया ईमेल आणि पासवर्ड दोन्ही भरावा.",
+                signupAlert:"साइन अप यशस्वी!"
+            }
+        };
+
+        const languageSelect = document.getElementById("language-select");
+        const title = document.getElementById("title");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const signupBtn = document.getElementById("signupBtn");
+        const signinBtn = document.getElementById("signinBtn");
+
+        languageSelect.addEventListener("change", () => {
+            const selectedLang = languageSelect.value;
+            const translation = translations[selectedLang];
+
+            title.innerText = translation.title;
+            nameInput.placeholder = translation.namePlaceholder;
+            emailInput.placeholder = translation.emailPlaceholder;
+            passwordInput.placeholder = translation.passwordPlaceholder;
+            signupBtn.innerText = translation.signupButton;
+            signinBtn.innerText = translation.signinButton;
+        });
+        const namefield = document.getElementById("namefield");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+        // Switch to Sign In
+signinBtn.onclick = function () {
+    namefield.style.display = "none"; // Hide the name field
+    const selectedLang = languageSelect.value; // Get the current language
+    title.innerHTML = translations[selectedLang].signinButton; // Update title dynamically
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+};
+
+// Switch to Sign Up
+signupBtn.onclick = function () {
+    namefield.style.display = "flex"; // Show the name field
+    const selectedLang = languageSelect.value; // Get the current language
+    title.innerHTML = translations[selectedLang].title; // Update title dynamically
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+};
+
+        // Validate inputs and handle Sign Up
+        signupBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const selectedLang = languageSelect.value;
+            if (!nameInput.value.trim() || !email.value.trim() || !password.value.trim()) {
+                alert(translations[selectedLang].signupError);
+            } else {
+                alert(translations[selectedLang].signupAlert);
+                window.location.href = "index.html"; // Redirect to the home page
+            }
+        });
+
+        // Validate inputs and handle Sign In
+        signinBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const selectedLang = languageSelect.value;
+            if (!email.value.trim() || !password.value.trim()) {
+                alert(translations[selectedLang].signinError);
+            } else {
+                alert(translations[selectedLang].signinAlert);
+                window.location.href = "index.html"; // Redirect to the home page
+            }
+        });
+    </script>
+</body>
+</html>

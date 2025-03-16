@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Highway Expansion",
+        "allocatedFunds": 5000000,
+        "spentFunds": 4500000,
+        "category": "Road Infrastructure",
+        "status": "Completed",
+        "suspicious": false
+    },
+    {
+        "name": "School Renovation",
+        "allocatedFunds": 2000000,
+        "spentFunds": 2200000,
+        "category": "Education",
+        "status": "Ongoing",
+        "suspicious": true
+    },
+    {
+        "name": "Public Hospital Upgrade",
+        "allocatedFunds": 8000000,
+        "spentFunds": 7500000,
+        "category": "Healthcare",
+        "status": "Delayed",
+        "suspicious": false
+    },
+    {
+        "name": "Metro Rail Project",
+        "allocatedFunds": 10000000,
+        "spentFunds": 9500000,
+        "category": "Transport",
+        "status": "Ongoing",
+        "suspicious": false
+    },
+    {
+        "name": "Smart City Development",
+        "allocatedFunds": 15000000,
+        "spentFunds": 12000000,
+        "category": "Urban Development",
+        "status": "Ongoing",
+        "suspicious": true
+    },
+    {
+        "name": "Water Supply Improvement",
+        "allocatedFunds": 6000000,
+        "spentFunds": 5000000,
+        "category": "Utilities",
+        "status": "Completed",
+        "suspicious": false
+    }
+]

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Corruption Awareness</title>
+    <link rel="stylesheet" href="education.css">
+    <script src="education.js" defer></script>
+</head>
+<body>
+
+    <!-- Google Translate Widget -->
+    <div id="google_translate_element"></div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Anti-Corruption Awareness</div>
+        <ul>
+            <li><a href="#legal-rights">Legal Rights</a></li>
+            <li><a href="#file-complaint">File Complaint</a></li>
+            <li><a href="#faq">FAQs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <h1>Say No to Corruption!</h1>
+        <p>Empowering Citizens with Legal Rights & Awareness</p>
+        <button onclick="reportCorruption()">Report Corruption</button>
+    </header>
+
+    <!-- Legal Rights & Anti-Corruption Laws Section -->
+    <section id="legal-rights">
+        <h2>Legal Rights & Anti-Corruption Laws</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-btn">Right to Information (RTI)</button>
+                <div class="accordion-content">
+                    <p>The Right to Information (RTI) Act allows citizens to access information from government bodies.</p>
+                    <a href="https://rti.gov.in/" target="_blank">Learn More</a>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-btn">Prevention of Corruption Act</button>
+                <div class="accordion-content">
+                    <p>This law aims to combat corruption in government and public sector organizations.</p>
+                    <a href="https://www.indiacode.nic.in/" target="_blank">Read the Law</a>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-btn">Indian Penal Code (IPC) on Corruption</button>
+                <div class="accordion-content">
+                    <p>Sections 161 to 165 of the IPC deal with bribery and corruption.</p>
+                    <a href="https://www.indiacode.nic.in/" target="_blank">View IPC Laws</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-btn">How can I report corruption?</button>
+                <div class="faq-content">
+                    <p>You can report corruption online at <a href="https://www.cvc.gov.in/" target="_blank">CVC's Official Website</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">What is the punishment for bribery?</button>
+                <div class="faq-content">
+                    <p>Under the Prevention of Corruption Act, bribery can result in imprisonment for up to 7 years.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">Where can I read India's corruption laws?</button>
+                <div class="faq-content">
+                    <p>Visit <a href="https://www.indiacode.nic.in/" target="_blank">India Code</a> for official legal documents.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">Can I report corruption anonymously?</button>
+                <div class="faq-content">
+                    <p>Yes, you can file an anonymous complaint with the Central Vigilance Commission.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn">How does RTI help in fighting corruption?</button>
+                <div class="faq-content">
+                    <p>RTI helps expose corruption by allowing citizens to demand transparency in government operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Anti-Corruption Awareness | All Rights Reserved</p>
+    </footer>
+
+    <!-- Google Translate API -->
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

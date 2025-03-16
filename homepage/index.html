@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparency & Anti-Corruption</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+
+   
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <!-- Hero Section -->
+    <section class="hero" >
+        <div class="hero-content" style="display: flex">
+            <img src="assets/logo.png" alt="Government Transparency Logo" width="100" >
+        </div>
+        <!-- Login Button (Top Right) -->
+
+  
+
+            <!-- Dropdown Menu (Top Right) -->
+            <div class="dropdown">
+                <button class="dropdown-btn" >☰ Menu</button>
+                <div class="dropdown-content">
+            <a href="annonymously_curruption\report.html">Report a Case</a>
+            <a href="heatmap\heatmap.html">Track Cases</a>
+            <a href="govt_transparency\transparency.html">Government Transparency</a>
+            <a href="govt_ratings\rating.html">Business Ratings</a>
+            <a href="login.html" class="login-btn" style="background-color: #007bff;">Login</a>
+        </div>   
+        </div>
+            <h1 id="animated-text" ">Expose Corruption, Build a Transparent Future</h1>
+            <p>Join us in the fight against corruption by reporting fraud and staying informed.</p>
+            <div class="buttons">
+                <a href="annonymously_curruption\report.html" class="btn">Report Corruption</a>
+                <a href="govt_transparency\transparency.html" class="btn btn-secondary">View Transparency Reports</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <img src="assets/Cor_banner.png" alt="Anti-Corruption Banner" class="hero-banner">
+        </div>
+    </section>
+
+    <!-- Live Stats -->
+    <section class="stats">
+        <h2>Live Corruption Statistics</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3 id="total-cases">0</h3>
+                <p>Corruption Cases Reported</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="funds-misused">$0</h3>
+                <p>Funds Misused</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="resolved-cases">0</h3>
+                <p>Cases Resolved</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corruption Heatmap -->
+    <section class="heatmap">
+        <h2>Corruption Risk Zones</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Latest Reports & Alerts -->
+    <section class="reports">
+        <h2>Latest Reports & Fraud Alerts</h2>
+        <div id="report-list"></div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <h2>Quick Access</h2>
+        <div class="links">
+            <a href="annonymously_curruption\report.html">Report a Case</a>
+            <a href="heatmap\heatmap.html">Track Cases</a>
+            <a href="govt_transparency\transparency.html">Government Transparency</a>
+            <a href="govt_ratings\rating.html">Business Ratings</a>
+        </div>
+    </section>
+
+    <!-- Educational Section -->
+    <section class="education">
+        <h2>Know Your Rights</h2>
+        <p>Understand anti-corruption laws, whistleblower rights, and legal support.</p>
+        <a href="#" class="btn">Learn More</a>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to receive updates on anti-corruption efforts.</p>
+        <input type="email" id="email" placeholder="Enter your email">
+        <button class="btn" onclick="subscribe()">Subscribe</button>
+        <p id="subscribe-message"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
